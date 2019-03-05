@@ -9,13 +9,17 @@
   </head>
   <body>
     <nav>
-      <span>Item 1</span>
-      <span>Item 2</span>
-      <span>Item 3</span>
-      <span>Item 4</span>
+
+      <!-- Placeholder Nav Items -->
+      <span>Getting Started</span>
+      <span>Components</span>
+      <span>State</span>
+      <span>Refs</span>
+      <span>Hooks</span>
     </nav>
     <header><h1>React Guide</h1></header>
     <main>
+
       <!-- Introduction Starts-->
       <section id="introduction">
         <h2>Introduction</h2>
@@ -39,6 +43,14 @@
             clutter and making it easy for a website to transition from one
             state to another.
           </p>
+          <p>
+            A big draw to react is its speed in which it can render data. It 
+            does this by using a lightweight virtual document object model 
+            called ReactDOM. When you tell react to modify part of your website, 
+            it updates the ReactDOM first. Then the virtual and actual DOM’s get 
+            compared and react will only update the data that has changed, not 
+            the entire model.
+          </p>
         </section>
         <section>
           <h3>How does it work?</h3>
@@ -60,8 +72,11 @@
       <!-- Guide Starts -->
       <section id="guide">
         <h2>Getting Started</h2>
-        <section>
+
+        <!-- Guide to adding react to an existing project -->
+        <section> 
           <h3>Adding React to an existing project</h3>
+
           <section>
             <h4>Step 1</h4>
             <p>
@@ -71,6 +86,19 @@
               <div>&lt;!-- Other html --&gt;</div>
               <div>&lt;div id="react-component-container"&gt;&lt;/div&gt;</div>
               <div>&lt;!-- Other html --&gt;</div>
+            </code>
+          </section>
+
+          <section>
+            <h4>Step 2</h4>
+            <p>Add Scripts to your webpage</p>
+            <code>
+              <div>&lt;!-- Other html --&gt;</div>
+              <div>&lt;script src="https://unpkg.com/react@16/umd/react.development.js"&gt;&lt;/script&gt;</div>
+              <div>&lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"&gt;&lt;/script&gt;</div>
+              <div>&lt;script src="myComponent.js"&gt;&lt;/script&gt;</div>
+            <br>
+              <div>&lt;/body&gt;</div>
             </code>
           </section>
         </section>
