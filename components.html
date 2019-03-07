@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="code-highlight.css"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <nav></nav>
+    <main>
+      <section>
+        <h1>Components</h1>
+        <p>
+          React renders content onto a webpage with the use of components.
+          Components are easy to use, can contain other components and can be as
+          simple or complex as you want them to be. Splitting up your webpage’s
+          functionality into components makes it easier to maintain and add new
+          features.
+        </p>
+        <p>
+          To create your own component, simply import react and create a class
+          that extends ‘Component’. To make your component display content, you
+          simply override ‘Component’’s render function and have it return what
+          you wish to display, usually written in the form of JSX.
+        </p>
+        <p>
+          Here is a simple React component that renders a button that will alert
+          the user when it has been clicked.
+        </p>
+
+        <code class="code-block">
+          <div>import React, { Component } from "react";</div>
+          <br />
+          <div>class Button extends Component {</div>
+          <div>&nbsp;render() {</div>
+          <div>&nbsp;&nbsp;return (</div>
+          <div>&nbsp;&nbsp;&nbsp;&lt;input</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;type="button"</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;value="Click me!"</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;className="clickable-button"</div>
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;onClick={this.handleClick}</div>
+          <div>&nbsp;&nbsp;&nbsp;/></div>
+          <div>&nbsp;&nbsp;);</div>
+          <div>&nbsp;}</div>
+          <br />
+          <div>&nbsp;handleClick() {</div>
+          <div>&nbsp;&nbsp;alert("button has been clicked");</div>
+          <div>&nbsp;}</div>
+          <div>}</div>
+          <br />
+          <div>export default Button;</div>
+        </code>
+      </section>
+    </main>
+  </body>
+</html>
