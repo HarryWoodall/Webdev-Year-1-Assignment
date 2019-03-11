@@ -4,10 +4,10 @@ code {
 
 code.code-block {
   display: block;
-  margin: 20px;
+  margin: auto;
   padding: 20px;
   padding-top: 30px;
-  width: 50%;
+  width: 90%;
 
   color: white;
   background: linear-gradient(
