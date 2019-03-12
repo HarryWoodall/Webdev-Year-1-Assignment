@@ -22,6 +22,10 @@ header {
 }
 
 main .main-header {
+  margin: 30px;
+  margin-left: 10px;
+  margin-right: 0px;
+  padding: 10px;
   font-size: 200%;
   background-color: #313131;
   color: white;
