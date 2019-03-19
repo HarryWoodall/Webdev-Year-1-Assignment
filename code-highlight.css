@@ -3,23 +3,41 @@ code {
 }
 
 code.code-block {
+  position: relative;
   display: block;
   margin: auto;
+  margin-top: 20px;
   padding: 20px;
-  padding-top: 30px;
+  padding-top: 50px;
   width: 90%;
 
   color: white;
   background: linear-gradient(
     180deg,
-    rgb(40, 115, 212) 15px,
+    rgb(141, 180, 231) 30px,
     rgb(44, 48, 65) 1px
   );
 
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+code .code-header {
+  background-color: rgb(69, 76, 104);
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+
+  height: 20px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 code .comment {
@@ -37,4 +55,30 @@ code .html-key {
 
 code .html-string {
   color: lightgreen;
+}
+
+/* code indents  */
+
+code .code-indent-1 {
+  text-indent: 1em;
+}
+
+code .code-indent-2 {
+  text-indent: 2em;
+}
+
+code .code-indent-3 {
+  text-indent: 3em;
+}
+
+code .code-indent-4 {
+  text-indent: 4em;
+}
+
+code .code-indent-5 {
+  text-indent: 5em;
+}
+
+code .code-indent-6 {
+  text-indent: 6em;
 }
