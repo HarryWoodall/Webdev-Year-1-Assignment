@@ -2,7 +2,6 @@ html,
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Grid Setup */
@@ -33,55 +32,80 @@ main {
   grid-row: 1 / span 2;
 }
 
-/* Styling */
+/* Sidebar */
+
+aside {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+}
+
+aside.page-navigation-container {
+  left: 1100px;
+  top: 50px;
+  height: auto;
+  width: 250px;
+}
 
 /* Nav */
 
 nav,
 header {
-  padding-left: 20px;
-  background-color: #313131;
-  color: white;
+  /* padding-left: 20px; */
 }
 
 nav {
   padding-top: 20px;
+  height: 100%;
 }
 
 nav span {
   display: block;
   margin: 5px;
+  padding-left: 20px;
   margin-bottom: 20px;
   font-size: 125%;
 }
 
 /* Header */
 
-header {
-  background-color: #222222;
-  font-size: 125%;
+header h1 {
+  margin: 0px;
+  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 /* Main */
 
 main,
 footer {
-  margin-left: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 main {
-  width: 60%;
+  width: 700px;
 }
 
 main .main-header {
   margin: 30px;
-  margin-left: 10px;
+  margin-left: 0px;
   margin-right: 0px;
   padding: 10px;
   font-size: 200%;
   background-color: #313131;
   color: white;
   border-radius: 5px;
+}
+
+section p {
+  margin-left: 10px;
+}
+
+p {
+  font-size: 100%;
+  line-height: 1.5em;
 }
 
 /* Section and sub-section */
@@ -97,6 +121,13 @@ section.sub-section {
   padding: 10px;
   padding-top: 0px;
   width: 100%;
+}
+
+/* figures  */
+
+figure img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 /* Other */

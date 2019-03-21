@@ -4,9 +4,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="layout-01/styles.css"
     />
     <link
       rel="stylesheet"
@@ -23,34 +26,36 @@
     <script src="main.js"></script>
   </head>
   <body>
-    <nav>
-      <span
-        ><a href="getting_started.html"
-          >Getting Started</a
-        ></span
-      >
-      <span><a href="components.html">Components</a></span>
-      <span
-        ><a href="stateful_components.html"
-          >Stateful Components</a
-        ></span
-      >
-      <span>Refs</span>
-      <span>Hooks</span>
-    </nav>
-    <header>
-      <a href="index.html"><h1>React Guide</h1></a>
-    </header>
+    <aside>
+      <header>
+        <a href="index.html"><h1>React Guide</h1></a>
+      </header>
+      <nav class="site-navigation">
+        <span><a href="getting_started.html">Getting Started</a></span>
+        <span><a href="components.html">Components</a></span>
+        <span><a href="stateful_components.html">Stateful Components</a></span>
+        <span>Refs</span>
+        <span>Hooks</span>
+      </nav>
+    </aside>
+
+    <aside class="page-navigation-container">
+      <nav class="page-navigation">
+        <span><a href="#State">State</a></span>
+        <span><a href="#Props">Props</a></span>
+        <span><a href="#Lifecycle">Lifecycle</a></span>
+      </nav>
+    </aside>
+
     <main>
-      <h1>Stateful Components</h1>
+      <h2 class="main-header">Stateful Components</h2>
       <section>
-        <h2>State</h2>
+        <h2 id="State">State</h2>
         <p>
-          Data about your react component can be stored in
-          its ‘state’ variable. This is really useful if you
-          wish to update your component at runtime. Here is
-          an example of a component that simulates new users
-          entering the site every time a button is pressed.
+          Data about your react component can be stored in its ‘state’ variable.
+          This is really useful if you wish to update your component at runtime.
+          Here is an example of a component that simulates new users entering
+          the site every time a button is pressed.
         </p>
         <code class="code-block">
           <div>
@@ -72,8 +77,7 @@
             &lt;div className="user-counter"&gt;
           </div>
           <div class="code-indent-4">
-            &lt;p
-            id="user-counter"&gt;{this.state.numberOfUsers}&lt;/p&gt;
+            &lt;p id="user-counter"&gt;{this.state.numberOfUsers}&lt;/p&gt;
           </div>
           <div class="code-indent-4">&lt;input</div>
           <div class="code-indent-5">type="button"</div>
@@ -90,39 +94,33 @@
           <div class="code-indent-1">}</div>
           <div class="code-indent-1">addUser() {</div>
           <div class="code-indent-2">
-            this.setState({ numberOfUsers:
-            this.state.numberOfUsers + 1 });
+            this.setState({ numberOfUsers: this.state.numberOfUsers + 1 });
           </div>
           <div class="code-indent-1">}</div>
           <div>}</div>
         </code>
         <p>
-          Any data stored inside state can simply be read by
-          calling ‘this.state’ but writing to state cannot
-          be done so easily. State should be treated as
-          immutable, and should only be changed by calling
-          ‘this.setState()’ as it is done in the method
-          ‘addUser’. This is because ‘this.setState()’ not
-          only updates the state variable of the component,
-          but the entire DOM. Using this.setState will
-          update what users see on the screen in real time,
-          which makes it very easy to create a web page that
-          contains dynamic content.
+          Any data stored inside state can simply be read by calling
+          ‘this.state’ but writing to state cannot be done so easily. State
+          should be treated as immutable, and should only be changed by calling
+          ‘this.setState()’ as it is done in the method ‘addUser’. This is
+          because ‘this.setState()’ not only updates the state variable of the
+          component, but the entire DOM. Using this.setState will update what
+          users see on the screen in real time, which makes it very easy to
+          create a web page that contains dynamic content.
         </p>
       </section>
       <section>
-        <h2>Props</h2>
+        <h2 id="Props">Props</h2>
         <p>
-          Often it is needed to not only update a single
-          component, but its child components too. Using
-          props, it is possible to pass through information
-          onto child props, so they can adapt to the change
-          of the parent.
+          Often it is needed to not only update a single component, but its
+          child components too. Using props, it is possible to pass through
+          information onto child props, so they can adapt to the change of the
+          parent.
         </p>
         <p>
-          In this example, the background color of a
-          components is changed every time a button is
-          clicked in its parent component.
+          In this example, the background color of a components is changed every
+          time a button is clicked in its parent component.
         </p>
 
         <code class="code-block">
@@ -139,8 +137,7 @@
             currentColor: "blue",
           </div>
           <div class="code-indent-3">
-            colors: ["blue", "green", "red", "orage",
-            "purple", "black", "pink"]
+            colors: ["blue", "green", "red", "orage", "purple", "black", "pink"]
           </div>
           <div class="code-indent-2">};</div>
           <div class="code-indent-2">
@@ -157,20 +154,17 @@
             onClick={this.changeColor} /&gt;
           </div>
           <div class="code-indent-4">
-            &lt;MyText
-            currentColor={this.state.currentColor} /&gt;
+            &lt;MyText currentColor={this.state.currentColor} /&gt;
           </div>
           <div class="code-indent-3">&lt;/div&gt;</div>
           <div class="code-indent-2">);</div>
           <div class="code-indent-1">}</div>
           <div class="code-indent-1">changeColor() {</div>
           <div class="code-indent-2">
-            const index = Math.floor(Math.random() *
-            this.state.colors.length);
+            const index = Math.floor(Math.random() * this.state.colors.length);
           </div>
           <div class="code-indent-2">
-            this.setState({ currentColor:
-            this.state.colors[index] });
+            this.setState({ currentColor: this.state.colors[index] });
           </div>
           <div class="code-indent-1">}</div>
           <div>}</div>
@@ -188,9 +182,8 @@
             &lt;div className="MyButton"&gt;
           </div>
           <div class="code-indent-4">
-            &lt;h1 style=&#123;&#123; color:
-            this.props.currentColor &#125;&#125;&gt;Hello
-            World&lt;/h1&gt;
+            &lt;h1 style=&#123;&#123; color: this.props.currentColor
+            &#125;&#125;&gt;Hello World&lt;/h1&gt;
           </div>
           <div class="code-indent-3">&lt;/div&gt;</div>
           <div class="code-indent-2">);</div>
@@ -199,13 +192,48 @@
           <div>export default MyText;</div>
         </code>
         <p>
-          A prop called ‘currentColor’ is passed into
-          ‘&lt;MyText /&gt;’ from ‘App.js’. This prop
-          contains the state of its ‘currentColor’ property.
+          A prop called ‘currentColor’ is passed into ‘&lt;MyText /&gt;’ from
+          ‘App.js’. This prop contains the state of its ‘currentColor’ property.
           This data can be accessed by MyText.js by calling
           ‘this.props.currentColor’
         </p>
       </section>
+      <section>
+        <h2 id="Lifecycle">Lifecycle</h2>
+        <p>
+          Typically a React component will have 3 phases, mounting, updating and
+          unmounting. Mounting happened when the components first gets added to
+          the application and when the <code>constructor()</code> method is
+          called. Next the <code>render()</code> method is executed, and
+          displays the component onto the screen. Finally the
+          <code>componentDidMount()</code> method is called, this is useful if
+          you need the component to render before you change/update certain
+          data.
+        </p>
+        <p>
+          The update phase is where something changes within the component or
+          component’s parent, usually by the ‘setState()’ method. And as such,
+          after the render() method, the ‘componentDidUpdate()’ is called.
+          Again, for the same reason as the componentDidMount() method does.
+        </p>
+        <p>
+          Finally, when the component gets removed from the application, it will
+          unmount. The <code>componentWIllUnmount()</code> method will be
+          called, which is useful for freeing up memory that your component
+          might be using.
+        </p>
+        <p>
+          There are many other lifecycle methods that a React component will
+          call, but these are just 3 of the most used.
+        </p>
+        <figure>
+          <img
+            src="resources/images/React lifecycle.png"
+            alt="React Lifecycle"
+          />
+        </figure>
+      </section>
     </main>
+    <footer></footer>
   </body>
 </html>

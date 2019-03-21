@@ -2,7 +2,8 @@ html,
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
+  background-color: rgb(238, 238, 238);
 }
 
 nav,
@@ -16,9 +17,25 @@ nav span {
   margin: 5px;
 }
 
+nav.page-navigation {
+  background-color: white;
+  border: 1px solid black;
+  box-shadow: 1px 0px 10px rgb(184, 184, 184);
+}
+
+nav.page-navigation span a {
+  color: black;
+}
+
 header {
   background-color: #222222;
   font-size: 125%;
+}
+
+main,
+footer {
+  background-color: white;
+  box-shadow: 1px 0px 10px rgb(184, 184, 184);
 }
 
 main .main-header {
