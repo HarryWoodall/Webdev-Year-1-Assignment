@@ -23,6 +23,11 @@
       media="screen"
       href="code-highlight.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+      rel="stylesheet"
+    />
+    <!-- https://fonts.google.com/?selection.family=Open+Sans:300 -->
   </head>
   <body>
     <aside>
@@ -33,8 +38,7 @@
         <span><a href="getting_started.html">Getting Started</a></span>
         <span><a href="components.html">Components</a></span>
         <span><a href="stateful_components.html">Stateful Components</a></span>
-        <span>Refs</span>
-        <span>Hooks</span>
+        <span><a href="JSX.html">JSX</a></span>
       </nav>
     </aside>
     <main>
@@ -57,68 +61,72 @@
             <p>
               Add a container that you wish your react component to be placed.
             </p>
-            <code class="code-block">
-              <div>
-                <span class="comment">&lt;!-- Other html --&gt;</span>
-              </div>
+            <figure>
+              <code class="code-block">
+                <div>
+                  <span class="comment">&lt;!-- Other html --&gt;</span>
+                </div>
 
-              <!-- <div id="react-component-container"></div> -->
-              <div>
-                <span class="html-tag"
-                  >&lt;div <span class="html-key">id=</span
-                  ><span class="html-string">"react-component-container"</span
-                  >&gt;</span
-                ><span class="html-tag">&lt;/div&gt;</span>
-              </div>
+                <!-- <div id="react-component-container"></div> -->
+                <div>
+                  <span class="html-tag"
+                    >&lt;div <span class="html-key">id=</span
+                    ><span class="html-string">"react-component-container"</span
+                    >&gt;</span
+                  ><span class="html-tag">&lt;/div&gt;</span>
+                </div>
 
-              <div>
-                <span class="comment">&lt;!-- Other html --&gt;</span>
-              </div>
-            </code>
+                <div>
+                  <span class="comment">&lt;!-- Other html --&gt;</span>
+                </div>
+              </code>
+            </figure>
           </section>
 
           <section class="sub-section">
             <h4>Step 2</h4>
             <p>Add Scripts to your webpage</p>
 
-            <code class="code-block">
-              <div>
-                <span class="comment">&lt;!-- Other html --&gt;</span>
-              </div>
+            <figure>
+              <code class="code-block">
+                <div>
+                  <span class="comment">&lt;!-- Other html --&gt;</span>
+                </div>
 
-              <!-- <script src="https://unpkg.com/react@16/umd/react.development.js"></script> -->
-              <div>
-                <span class="html-tag"
-                  >&lt;script <span class="html-key">src=</span
-                  ><span class="html-string"
-                    >"https://unpkg.com/react@16/umd/react.development.js"</span
-                  >&gt;</span
-                ><span class="html-tag">&lt;/script&gt;</span>
-              </div>
+                <!-- <script src="https://unpkg.com/react@16/umd/react.development.js"></script> -->
+                <div>
+                  <span class="html-tag"
+                    >&lt;script <span class="html-key">src=</span
+                    ><span class="html-string"
+                      >"https://unpkg.com/react@16/umd/react.development.js"</span
+                    >&gt;</span
+                  ><span class="html-tag">&lt;/script&gt;</span>
+                </div>
 
-              <!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
-              <div>
-                <span class="html-tag"
-                  >&lt;script <span class="html-key">src=</span
-                  ><span class="html-string"
-                    >"https://unpkg.com/react-dom@16/umd/react-dom.development.js"</span
-                  >&gt;</span
-                ><span class="html-tag">&lt;/script&gt;</span>
-              </div>
+                <!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
+                <div>
+                  <span class="html-tag"
+                    >&lt;script <span class="html-key">src=</span
+                    ><span class="html-string"
+                      >"https://unpkg.com/react-dom@16/umd/react-dom.development.js"</span
+                    >&gt;</span
+                  ><span class="html-tag">&lt;/script&gt;</span>
+                </div>
 
-              <!-- <script src="myComponent.js"></script> -->
-              <div>
-                <span class="html-tag"
-                  >&lt;script <span class="html-key">src=</span
-                  ><span class="html-string">"myComponent.js"</span>&gt;</span
-                ><span class="html-tag">&lt;/script&gt;</span>
-              </div>
+                <!-- <script src="myComponent.js"></script> -->
+                <div>
+                  <span class="html-tag"
+                    >&lt;script <span class="html-key">src=</span
+                    ><span class="html-string">"myComponent.js"</span>&gt;</span
+                  ><span class="html-tag">&lt;/script&gt;</span>
+                </div>
 
-              <br />
-              <div>
-                <span class="html-tag">&lt;/body&gt;</span>
-              </div>
-            </code>
+                <br />
+                <div>
+                  <span class="html-tag">&lt;/body&gt;</span>
+                </div>
+              </code>
+            </figure>
             <p>
               Where <code>myComponent.js</code> contains the react component
               that you wish to implement.
@@ -131,28 +139,31 @@
               Create and render your react component by putting this inside
               <code>myComponent.js</code>.
             </p>
-            <code class="code-block">
-              <div>"use strict"</div>
-              <br />
-              <div>
-                class HelloWorld extends React.Component {
-              </div>
-              <div>&nbsp;render() {</div>
-              <div>
-                &nbsp;&nbsp;return React.createElement("h1", null, "Hello
-                World");
-              </div>
-              <div>&nbsp;}</div>
-              <div>}</div>
-              <br />
-              <div>
-                const domContainer =
-                document.getElementById("react-component-container");
-              </div>
-              <div>
-                ReactDom.render(React.createElement(Hello World), domContainer);
-              </div>
-            </code>
+            <figure>
+              <code class="code-block">
+                <div>"use strict"</div>
+                <br />
+                <div>
+                  class HelloWorld extends React.Component {
+                </div>
+                <div>&nbsp;render() {</div>
+                <div>
+                  &nbsp;&nbsp;return React.createElement("h1", null, "Hello
+                  World");
+                </div>
+                <div>&nbsp;}</div>
+                <div>}</div>
+                <br />
+                <div>
+                  const domContainer =
+                  document.getElementById("react-component-container");
+                </div>
+                <div>
+                  ReactDom.render(React.createElement(Hello World),
+                  domContainer);
+                </div>
+              </code>
+            </figure>
             <p>
               Of course, this component doesn’t do much, or anything at all
               really. But this does give you a basic idea of how react
@@ -168,10 +179,12 @@
             To create a new react app, you need to install it using npm on the
             command line.
           </p>
-          <code class="code-block">
-            <div>nxp create-react-app my-app</div>
-            <div>cd my-app</div>
-          </code>
+          <figure>
+            <code class="code-block">
+              <div>nxp create-react-app my-app</div>
+              <div>cd my-app</div>
+            </code>
+          </figure>
           <p>
             This process could take several minutes to complete to be patient.
             After this is complete, your main file structure should look like

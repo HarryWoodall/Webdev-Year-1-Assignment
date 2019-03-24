@@ -23,7 +23,10 @@
       media="screen"
       href="code-highlight.css"
     />
-    <script src="main.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <aside>
@@ -34,13 +37,12 @@
         <span><a href="getting_started.html">Getting Started</a></span>
         <span><a href="components.html">Components</a></span>
         <span><a href="stateful_components.html">Stateful Components</a></span>
-        <span>Refs</span>
-        <span>Hooks</span>
+        <span><a href="JSX.html">JSX</a></span>
       </nav>
     </aside>
     <main>
-      <section>
-        <h2 class="main-header">Components</h2>
+      <h2 class="main-header">Components</h2>
+      <section class="sub-section">
         <p>
           React renders content onto a webpage with the use of components.
           Components are easy to use, can contain other components and can be as
@@ -58,29 +60,59 @@
           Here is a simple React component that renders a button that will alert
           the user when it has been clicked.
         </p>
-
-        <code class="code-block">
-          <div>import React, { Component } from "react";</div>
-          <br />
-          <div>class Button extends Component {</div>
-          <div>&nbsp;render() {</div>
-          <div>&nbsp;&nbsp;return (</div>
-          <div>&nbsp;&nbsp;&nbsp;&lt;input</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;type="button"</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;value="Click me!"</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;className="clickable-button"</div>
-          <div>&nbsp;&nbsp;&nbsp;&nbsp;onClick={this.handleClick}</div>
-          <div>&nbsp;&nbsp;&nbsp;/></div>
-          <div>&nbsp;&nbsp;);</div>
-          <div>&nbsp;}</div>
-          <br />
-          <div>&nbsp;handleClick() {</div>
-          <div>&nbsp;&nbsp;alert("button has been clicked");</div>
-          <div>&nbsp;}</div>
-          <div>}</div>
-          <br />
-          <div>export default Button;</div>
-        </code>
+        <figure>
+          <code class="code-block">
+            <div>import React, { Component } from "react";</div>
+            <br />
+            <div>class Button extends Component {</div>
+            <div class="code-indent-1">render() {</div>
+            <div class="code-indent-2">return (</div>
+            <div class="code-indent-3">&lt;input</div>
+            <div class="code-indent-4">type="button"</div>
+            <div class="code-indent-4">value="Click me!"</div>
+            <div class="code-indent-4">className="clickable-button"</div>
+            <div class="code-indent-4">onClick={this.handleClick}</div>
+            <div class="code-indent-3">/></div>
+            <div class="code-indent-2">);</div>
+            <div class="code-indent-1">}</div>
+            <br />
+            <div class="code-indent-1">handleClick() {</div>
+            <div class="code-indent-2">alert("button has been clicked");</div>
+            <div class="code-indent-1">}</div>
+            <div>}</div>
+            <br />
+            <div>export default Button;</div>
+          </code>
+        </figure>
+        <p>
+          Inside the render method, there is syntax that isn’t valid javascript,
+          this is JSX. Even though it looks similar to HTML, there are a few
+          noticeable differences. In HTML. To define an element’s class, the
+          syntax looks like ‘class=”name-of-class”. But because ‘class’ is a
+          reserved word in javascript, react has opted to use ‘className’ to
+          define an element’s class. Using ‘{}’ you are able to pass regular
+          javascript into JSX. You can see this happening where the button
+          defined its onClick parameter.
+        </p>
+        <p>
+          If you wish to add this component to an existing component, it is a
+          simple as importing the class and placing it where you want.
+        </p>
+        <figure>
+          <code class="code-block">
+            <div>import "./MyButton"</div>
+            <br />
+            <div>class App extends Component {</div>
+            <div class="code-indent-1">render() {</div>
+            <div class="code-indent-2">return (</div>
+            <div class="code-indent-3">&lt;div className="App"&gt;</div>
+            <div class="code-indent-4">&lt;MyButton /&gt;</div>
+            <div class="code-indent-3">&lt;/div&gt;</div>
+            <div class="code-indent-2">);</div>
+            <div class="code-indent-1">}</div>
+            <div>}</div>
+          </code>
+        </figure>
       </section>
     </main>
   </body>

@@ -18,14 +18,19 @@ code.code-block {
     rgb(44, 48, 65) 1px
   );
 
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  box-shadow: 5px 5px 5px 2px gray;
 }
 
 code .code-header {
   background-color: rgb(69, 76, 104);
+  font-size: 125%;
+  font-weight: 100;
+  font-style: italic;
 
   position: absolute;
   top: 0px;
@@ -36,8 +41,8 @@ code .code-header {
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 
 code .comment {
@@ -81,4 +86,8 @@ code .code-indent-5 {
 
 code .code-indent-6 {
   text-indent: 6em;
+}
+
+code .code-indent-7 {
+  text-indent: 7em;
 }

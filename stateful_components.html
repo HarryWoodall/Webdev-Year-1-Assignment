@@ -23,7 +23,10 @@
       media="screen"
       href="code-highlight.css"
     />
-    <script src="main.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <aside>
@@ -34,8 +37,7 @@
         <span><a href="getting_started.html">Getting Started</a></span>
         <span><a href="components.html">Components</a></span>
         <span><a href="stateful_components.html">Stateful Components</a></span>
-        <span>Refs</span>
-        <span>Hooks</span>
+        <span><a href="JSX.html">JSX</a></span>
       </nav>
     </aside>
 
@@ -49,56 +51,58 @@
 
     <main>
       <h2 class="main-header">Stateful Components</h2>
-      <section>
-        <h2 id="State">State</h2>
+      <section class="sub-section">
+        <h3 id="State">State</h3>
         <p>
           Data about your react component can be stored in its ‘state’ variable.
           This is really useful if you wish to update your component at runtime.
           Here is an example of a component that simulates new users entering
           the site every time a button is pressed.
         </p>
-        <code class="code-block">
-          <div>
-            import React, { Component } from "react";
-          </div>
-          <div>class UserCounter extends Component {</div>
-          <div class="code-indent-1">constructor() {</div>
-          <div class="code-indent-2">super();</div>
-          <div class="code-indent-2">this.state = {</div>
-          <div class="code-indent-3">numberOfUsers: 0</div>
-          <div class="code-indent-2">};</div>
-          <div class="code-indent-2">
-            this.addUser = this.addUser.bind(this);
-          </div>
-          <div class="code-indent-1">}</div>
-          <div class="code-indent-1">render() {</div>
-          <div class="code-indent-2">return (</div>
-          <div class="code-indent-3">
-            &lt;div className="user-counter"&gt;
-          </div>
-          <div class="code-indent-4">
-            &lt;p id="user-counter"&gt;{this.state.numberOfUsers}&lt;/p&gt;
-          </div>
-          <div class="code-indent-4">&lt;input</div>
-          <div class="code-indent-5">type="button"</div>
-          <div class="code-indent-5">value="Add User"</div>
-          <div class="code-indent-5">
-            id="add-user-button"
-          </div>
-          <div class="code-indent-5">
-            onClick={this.addUser}
-          </div>
-          <div class="code-indent-4">/&gt;</div>
-          <div class="code-indent-3">&lt;/div&gt;</div>
-          <div class="code-indent-2">);</div>
-          <div class="code-indent-1">}</div>
-          <div class="code-indent-1">addUser() {</div>
-          <div class="code-indent-2">
-            this.setState({ numberOfUsers: this.state.numberOfUsers + 1 });
-          </div>
-          <div class="code-indent-1">}</div>
-          <div>}</div>
-        </code>
+        <figure>
+          <code class="code-block">
+            <div>
+              import React, { Component } from "react";
+            </div>
+            <div>class UserCounter extends Component {</div>
+            <div class="code-indent-1">constructor() {</div>
+            <div class="code-indent-2">super();</div>
+            <div class="code-indent-2">this.state = {</div>
+            <div class="code-indent-3">numberOfUsers: 0</div>
+            <div class="code-indent-2">};</div>
+            <div class="code-indent-2">
+              this.addUser = this.addUser.bind(this);
+            </div>
+            <div class="code-indent-1">}</div>
+            <div class="code-indent-1">render() {</div>
+            <div class="code-indent-2">return (</div>
+            <div class="code-indent-3">
+              &lt;div className="user-counter"&gt;
+            </div>
+            <div class="code-indent-4">
+              &lt;p id="user-counter"&gt;{this.state.numberOfUsers}&lt;/p&gt;
+            </div>
+            <div class="code-indent-4">&lt;input</div>
+            <div class="code-indent-5">type="button"</div>
+            <div class="code-indent-5">value="Add User"</div>
+            <div class="code-indent-5">
+              id="add-user-button"
+            </div>
+            <div class="code-indent-5">
+              onClick={this.addUser}
+            </div>
+            <div class="code-indent-4">/&gt;</div>
+            <div class="code-indent-3">&lt;/div&gt;</div>
+            <div class="code-indent-2">);</div>
+            <div class="code-indent-1">}</div>
+            <div class="code-indent-1">addUser() {</div>
+            <div class="code-indent-2">
+              this.setState({ numberOfUsers: this.state.numberOfUsers + 1 });
+            </div>
+            <div class="code-indent-1">}</div>
+            <div>}</div>
+          </code>
+        </figure>
         <p>
           Any data stored inside state can simply be read by calling
           ‘this.state’ but writing to state cannot be done so easily. State
@@ -110,8 +114,8 @@
           create a web page that contains dynamic content.
         </p>
       </section>
-      <section>
-        <h2 id="Props">Props</h2>
+      <section class="sub-section">
+        <h3 id="Props">Props</h3>
         <p>
           Often it is needed to not only update a single component, but its
           child components too. Using props, it is possible to pass through
@@ -122,75 +126,78 @@
           In this example, the background color of a components is changed every
           time a button is clicked in its parent component.
         </p>
+        <figure>
+          <code class="code-block">
+            <h3 class="code-header">App.js</h3>
+            <div>
+              import React, { Component } from "react";
+            </div>
+            <div>import MyText from "./MyText";</div>
+            <div>class App extends Component {</div>
+            <div class="code-indent-1">constructor() {</div>
+            <div class="code-indent-2">super();</div>
+            <div class="code-indent-2">this.state = {</div>
+            <div class="code-indent-3">
+              currentColor: "blue",
+            </div>
+            <div class="code-indent-3">
+              colors: ["blue", "green", "red", "orage", "purple", "black",
+              "pink"]
+            </div>
+            <div class="code-indent-2">};</div>
+            <div class="code-indent-2">
+              this.changeColor = this.changeColor.bind(this);
+            </div>
+            <div class="code-indent-1">}</div>
+            <div class="code-indent-1">render() {</div>
+            <div class="code-indent-2">return (</div>
+            <div class="code-indent-3">
+              &lt;div className="App"&gt;
+            </div>
+            <div class="code-indent-4">
+              &lt;input type="submit" value="Change Color"
+              onClick={this.changeColor} /&gt;
+            </div>
+            <div class="code-indent-4">
+              &lt;MyText currentColor={this.state.currentColor} /&gt;
+            </div>
+            <div class="code-indent-3">&lt;/div&gt;</div>
+            <div class="code-indent-2">);</div>
+            <div class="code-indent-1">}</div>
+            <div class="code-indent-1">changeColor() {</div>
+            <div class="code-indent-2">
+              const index = Math.floor(Math.random() *
+              this.state.colors.length);
+            </div>
+            <div class="code-indent-2">
+              this.setState({ currentColor: this.state.colors[index] });
+            </div>
+            <div class="code-indent-1">}</div>
+            <div>}</div>
+          </code>
 
-        <code class="code-block">
-          <h3 class="code-header">App.js</h3>
-          <div>
-            import React, { Component } from "react";
-          </div>
-          <div>import MyText from "./MyText";</div>
-          <div>class App extends Component {</div>
-          <div class="code-indent-1">constructor() {</div>
-          <div class="code-indent-2">super();</div>
-          <div class="code-indent-2">this.state = {</div>
-          <div class="code-indent-3">
-            currentColor: "blue",
-          </div>
-          <div class="code-indent-3">
-            colors: ["blue", "green", "red", "orage", "purple", "black", "pink"]
-          </div>
-          <div class="code-indent-2">};</div>
-          <div class="code-indent-2">
-            this.changeColor = this.changeColor.bind(this);
-          </div>
-          <div class="code-indent-1">}</div>
-          <div class="code-indent-1">render() {</div>
-          <div class="code-indent-2">return (</div>
-          <div class="code-indent-3">
-            &lt;div className="App"&gt;
-          </div>
-          <div class="code-indent-4">
-            &lt;input type="submit" value="Change Color"
-            onClick={this.changeColor} /&gt;
-          </div>
-          <div class="code-indent-4">
-            &lt;MyText currentColor={this.state.currentColor} /&gt;
-          </div>
-          <div class="code-indent-3">&lt;/div&gt;</div>
-          <div class="code-indent-2">);</div>
-          <div class="code-indent-1">}</div>
-          <div class="code-indent-1">changeColor() {</div>
-          <div class="code-indent-2">
-            const index = Math.floor(Math.random() * this.state.colors.length);
-          </div>
-          <div class="code-indent-2">
-            this.setState({ currentColor: this.state.colors[index] });
-          </div>
-          <div class="code-indent-1">}</div>
-          <div>}</div>
-        </code>
-
-        <code class="code-block">
-          <h3 class="code-header">MyText.js</h3>
-          <div>
-            import React, { Component } from "react";
-          </div>
-          <div>class MyText extends Component {</div>
-          <div class="code-indent-1">render() {</div>
-          <div class="code-indent-2">return (</div>
-          <div class="code-indent-3">
-            &lt;div className="MyButton"&gt;
-          </div>
-          <div class="code-indent-4">
-            &lt;h1 style=&#123;&#123; color: this.props.currentColor
-            &#125;&#125;&gt;Hello World&lt;/h1&gt;
-          </div>
-          <div class="code-indent-3">&lt;/div&gt;</div>
-          <div class="code-indent-2">);</div>
-          <div class="code-indent-1">}</div>
-          <div>}</div>
-          <div>export default MyText;</div>
-        </code>
+          <code class="code-block">
+            <h3 class="code-header">MyText.js</h3>
+            <div>
+              import React, { Component } from "react";
+            </div>
+            <div>class MyText extends Component {</div>
+            <div class="code-indent-1">render() {</div>
+            <div class="code-indent-2">return (</div>
+            <div class="code-indent-3">
+              &lt;div className="MyButton"&gt;
+            </div>
+            <div class="code-indent-4">
+              &lt;h1 style=&#123;&#123; color: this.props.currentColor
+              &#125;&#125;&gt;Hello World&lt;/h1&gt;
+            </div>
+            <div class="code-indent-3">&lt;/div&gt;</div>
+            <div class="code-indent-2">);</div>
+            <div class="code-indent-1">}</div>
+            <div>}</div>
+            <div>export default MyText;</div>
+          </code>
+        </figure>
         <p>
           A prop called ‘currentColor’ is passed into ‘&lt;MyText /&gt;’ from
           ‘App.js’. This prop contains the state of its ‘currentColor’ property.
@@ -198,8 +205,8 @@
           ‘this.props.currentColor’
         </p>
       </section>
-      <section>
-        <h2 id="Lifecycle">Lifecycle</h2>
+      <section class="sub-section">
+        <h3 id="Lifecycle">Lifecycle</h3>
         <p>
           Typically a React component will have 3 phases, mounting, updating and
           unmounting. Mounting happened when the components first gets added to

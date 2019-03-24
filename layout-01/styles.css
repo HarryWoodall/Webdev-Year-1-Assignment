@@ -2,7 +2,7 @@ html,
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Verdana, sans-serif;
+  font-family: "Open Sans", Verdana, sans-serif;
   background-color: rgb(238, 238, 238);
 }
 
@@ -29,7 +29,7 @@ nav.page-navigation span a {
 
 header {
   background-color: #222222;
-  font-size: 125%;
+  font-size: 150%;
 }
 
 main,
@@ -39,14 +39,11 @@ footer {
 }
 
 main .main-header {
-  margin: 30px;
-  margin-left: 10px;
-  margin-right: 0px;
-  padding: 10px;
   font-size: 200%;
   background-color: #313131;
   color: white;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 a {

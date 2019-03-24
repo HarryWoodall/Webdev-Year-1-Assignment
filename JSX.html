@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="layout-01/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="layout-01/layout-01.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="code-highlight.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <aside>
+      <header>
+        <a href="index.html"><h1>React Guide</h1></a>
+      </header>
+      <nav class="site-navigation">
+        <span><a href="getting_started.html">Getting Started</a></span>
+        <span><a href="components.html">Components</a></span>
+        <span><a href="stateful_components.html">Stateful Components</a></span>
+        <span><a href="JSX.html">JSX</a></span>
+      </nav>
+    </aside>
+
+    <main>
+      <h2 class="main-header">JSX</h2>
+      <p>
+        JSX or javascript extension, is used by React to describe what a UI
+        element should look like. It is in essence HTML with the full power of
+        javascript behind it. React doesn’t require JSX but it is very useful as
+        visual aid and it also allows for more useful errors and warnings when
+        writing code.
+      </p>
+      <section class="sub-section">
+        <h3 id="Embedded Expressions">Embedded expressions</h3>
+        <p>
+          JSX allows for embedded javascript with the use of ‘{}’. You can place
+          any valid javascript inside curly braces and your JSX will still
+          compile. For example
+        </p>
+        <figure>
+          <code class="code-block">
+            <div>const name = "George";</div>
+            <div>
+              const element = &lt;h1&gt;Hello, my name is {name}&lt;/h1&gt;
+            </div>
+          </code>
+        </figure>
+        <p>
+          The variable name is inserted into a JSX element, returning the h1
+          element ‘Hello, my name is George’
+        </p>
+        <p>JSX, not only allows variables, but method calls too.</p>
+        <figure>
+          <code class="code-block">
+            <div>function getDate(date) {</div>
+            <div class="code-indent-1">Return (</div>
+            <div class="code-indent-2">
+              Date.day + "/" + date.month + "/" + date.year
+            </div>
+            <div class="code-indent-1">);</div>
+            <div>}</div>
+            <br />
+            <div>Let date = {</div>
+            <div class="code-indent-1">Day: 7,</div>
+            <div class="code-indent-1">Month: 3,</div>
+            <div class="code-indent-1">Year: 2019</div>
+            <div>}</div>
+            <br />
+            <div>
+              const element = &lt;h3&gt;The date is {getDate(date)}&lt;/h3&gt;
+            </div>
+          </code>
+        </figure>
+      </section>
+      <section class="sub-section">
+        <h3 id="Lists and Keys">Lists and Keys</h3>
+        <p>
+          In JSX, lists need additional information as they get stored without
+          order. So if you wish to give your list consistency, then you should
+          give each of your list items a unique key.
+        </p>
+        <p>Here is an example of a list written in React.</p>
+        <figure>
+          <code class="code-block">
+            <div>class App extends Component {</div>
+            <div class="code-indent-1">constructor() {</div>
+            <div class="code-indent-2">super();</div>
+            <div class="code-indent-2">
+              this.data = ["item1", "item2", "item3", "item4"];
+            </div>
+            <div class="code-indent-1">}</div>
+            <br />
+            <div class="code-indent-1">render() {</div>
+            <div class="code-indent-2">return (</div>
+            <div class="code-indent-3">&lt;div className="App"&gt;</div>
+            <div class="code-indent-4">&lt;ul&gt;</div>
+            <div class="code-indent-5">{this.data.map(item => (</div>
+            <div class="code-indent-6">
+              &lt;li className="listItem" key={item}&gt;&lt;/li&gt;
+            </div>
+            <div class="code-indent-7">{item}</div>
+            <div class="code-indent-6">&lt;/li&gt;</div>
+            <div class="code-indent-5">))}</div>
+            <div class="code-indent-4">&lt;/ul&gt;</div>
+            <div class="code-indent-3">&lt;/div&gt;</div>
+            <div class="code-indent-2">);</div>
+            <div class="code-indent-1">}</div>
+            <div>}</div>
+            <br />
+            <div>export default App;</div>
+          </code>
+        </figure>
+        <p>
+          It gives each item in the array its own key, in this case its own
+          value, to ensure consistency. The value of each key has to be unique,
+          so if the keys were to contain repeating values, consistency would not
+          be guaranteed. The result of this code would look something like this.
+        </p>
+        <figure>
+          <img
+            src="resources/images/jsx-img-01.png"
+            alt="List and Keys result"
+          />
+        </figure>
+      </section>
+    </main>
+  </body>
+</html>
