@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -24,60 +27,90 @@
       href="code-highlight.css"
     />
     <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="layout-01/layout-01-mobile.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300"
       rel="stylesheet"
     />
   </head>
   <body>
-    <aside>
+    <aside class="main-nav">
       <header>
         <a href="index.html"><h1>React Guide</h1></a>
       </header>
       <nav>
-        <span><a href="getting_started.html">Getting Started</a></span>
-        <span><a href="components.html">Components</a></span>
-        <span><a href="stateful_components.html">Stateful Components</a></span>
-        <span><a href="JSX.html">JSX</a></span>
+        <ul>
+          <li>
+            <a href="getting_started.html"
+              >Getting Started</a
+            >
+          </li>
+          <li><a href="components.html">Components</a></li>
+          <li>
+            <a href="stateful_components.html"
+              >Stateful Components</a
+            >
+          </li>
+          <li><a href="JSX.html">JSX</a></li>
+        </ul>
       </nav>
     </aside>
     <main>
       <h2 class="main-header">Components</h2>
       <section class="sub-section">
         <p>
-          React renders content onto a webpage with the use of components.
-          Components are easy to use, can contain other components and can be as
-          simple or complex as you want them to be. Splitting up your webpage’s
-          functionality into components makes it easier to maintain and add new
-          features.
+          React renders content onto a webpage with the use
+          of components. Components are easy to use, can
+          contain other components and can be as simple or
+          complex as you want them to be. Splitting up your
+          webpage’s functionality into components makes it
+          easier to maintain and add new features.
         </p>
         <p>
-          To create your own component, simply import react and create a class
-          that extends ‘Component’. To make your component display content, you
-          simply override ‘Component’’s render function and have it return what
-          you wish to display, usually written in the form of JSX.
+          To create your own component, simply import react
+          and create a class that extends ‘Component’. To
+          make your component display content, you simply
+          override ‘Component’’s render function and have it
+          return what you wish to display, usually written
+          in the form of JSX.
         </p>
         <p>
-          Here is a simple React component that renders a button that will alert
-          the user when it has been clicked.
+          Here is a simple React component that renders a
+          button that will alert the user when it has been
+          clicked.
         </p>
         <figure>
           <code class="code-block">
-            <div>import React, { Component } from "react";</div>
+            <div>
+              import React, { Component } from "react";
+            </div>
             <br />
             <div>class Button extends Component {</div>
             <div class="code-indent-1">render() {</div>
             <div class="code-indent-2">return (</div>
             <div class="code-indent-3">&lt;input</div>
             <div class="code-indent-4">type="button"</div>
-            <div class="code-indent-4">value="Click me!"</div>
-            <div class="code-indent-4">className="clickable-button"</div>
-            <div class="code-indent-4">onClick={this.handleClick}</div>
+            <div class="code-indent-4">
+              value="Click me!"
+            </div>
+            <div class="code-indent-4">
+              className="clickable-button"
+            </div>
+            <div class="code-indent-4">
+              onClick={this.handleClick}
+            </div>
             <div class="code-indent-3">/&gt;</div>
             <div class="code-indent-2">);</div>
             <div class="code-indent-1">}</div>
             <br />
             <div class="code-indent-1">handleClick() {</div>
-            <div class="code-indent-2">alert("button has been clicked");</div>
+            <div class="code-indent-2">
+              alert("button has been clicked");
+            </div>
             <div class="code-indent-1">}</div>
             <div>}</div>
             <br />
@@ -85,18 +118,22 @@
           </code>
         </figure>
         <p>
-          Inside the render method, there is syntax that isn’t valid javascript,
-          this is JSX. Even though it looks similar to HTML, there are a few
-          noticeable differences. In HTML. To define an element’s class, the
-          syntax looks like ‘class=”name-of-class”. But because ‘class’ is a
-          reserved word in javascript, react has opted to use ‘className’ to
-          define an element’s class. Using ‘{}’ you are able to pass regular
-          javascript into JSX. You can see this happening where the button
-          defined its onClick parameter.
+          Inside the render method, there is syntax that
+          isn’t valid javascript, this is JSX. Even though
+          it looks similar to HTML, there are a few
+          noticeable differences. In HTML. To define an
+          element’s class, the syntax looks like
+          ‘class=”name-of-class”. But because ‘class’ is a
+          reserved word in javascript, react has opted to
+          use ‘className’ to define an element’s class.
+          Using ‘{}’ you are able to pass regular javascript
+          into JSX. You can see this happening where the
+          button defined its onClick parameter.
         </p>
         <p>
-          If you wish to add this component to an existing component, it is a
-          simple as importing the class and placing it where you want.
+          If you wish to add this component to an existing
+          component, it is a simple as importing the class
+          and placing it where you want.
         </p>
         <figure>
           <code class="code-block">
@@ -105,8 +142,12 @@
             <div>class App extends Component {</div>
             <div class="code-indent-1">render() {</div>
             <div class="code-indent-2">return (</div>
-            <div class="code-indent-3">&lt;div className="App"&gt;</div>
-            <div class="code-indent-4">&lt;MyButton /&gt;</div>
+            <div class="code-indent-3">
+              &lt;div className="App"&gt;
+            </div>
+            <div class="code-indent-4">
+              &lt;MyButton /&gt;
+            </div>
             <div class="code-indent-3">&lt;/div&gt;</div>
             <div class="code-indent-2">);</div>
             <div class="code-indent-1">}</div>

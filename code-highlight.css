@@ -5,6 +5,7 @@ code {
 code.code-block {
   position: relative;
   display: block;
+  overflow-y: auto;
   margin: auto;
   margin-top: 20px;
   padding: 20px;

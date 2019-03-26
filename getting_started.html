@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -24,6 +27,12 @@
       href="code-highlight.css"
     />
     <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="layout-01/layout-01-mobile.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300"
       rel="stylesheet"
     />
@@ -35,10 +44,20 @@
         <a href="index.html"><h1>React Guide</h1></a>
       </header>
       <nav>
-        <span><a href="getting_started.html">Getting Started</a></span>
-        <span><a href="components.html">Components</a></span>
-        <span><a href="stateful_components.html">Stateful Components</a></span>
-        <span><a href="JSX.html">JSX</a></span>
+        <ul>
+          <li>
+            <a href="getting_started.html"
+              >Getting Started</a
+            >
+          </li>
+          <li><a href="components.html">Components</a></li>
+          <li>
+            <a href="stateful_components.html"
+              >Stateful Components</a
+            >
+          </li>
+          <li><a href="JSX.html">JSX</a></li>
+        </ul>
       </nav>
     </aside>
 
@@ -64,38 +83,52 @@
       <section>
         <h2 class="main-header">Getting Started</h2>
         <p>
-          There are 2 ways to add React to your website. The first way involves
-          importing small snippets of react code into an existing project, the
-          other is making a full blown react app from scratch. The second way is
-          more involved, but also gives you many benefits.
+          There are 2 ways to add React to your website. The
+          first way involves importing small snippets of
+          react code into an existing project, the other is
+          making a full blown react app from scratch. The
+          second way is more involved, but also gives you
+          many benefits.
         </p>
 
         <!-- Guide to adding react to an existing project -->
-        <section class="sub-section" id="Adding React to an existing project">
+        <section
+          class="sub-section"
+          id="Adding React to an existing project"
+        >
           <h3>Adding React to an existing project</h3>
 
           <section class="sub-section">
             <h4>Step 1</h4>
             <p>
-              Add a container that you wish your react component to be placed.
+              Add a container that you wish your react
+              component to be placed.
             </p>
             <figure>
               <code class="code-block">
                 <div>
-                  <span class="comment">&lt;!-- Other html --&gt;</span>
+                  <span class="comment"
+                    >&lt;!-- Other html --&gt;</span
+                  >
                 </div>
 
                 <!-- <div id="react-component-container"></div> -->
                 <div>
                   <span class="html-tag"
-                    >&lt;div <span class="html-key">id=</span
-                    ><span class="html-string">"react-component-container"</span
+                    >&lt;div
+                    <span class="html-key">id=</span
+                    ><span class="html-string"
+                      >"react-component-container"</span
                     >&gt;</span
-                  ><span class="html-tag">&lt;/div&gt;</span>
+                  ><span class="html-tag"
+                    >&lt;/div&gt;</span
+                  >
                 </div>
 
                 <div>
-                  <span class="comment">&lt;!-- Other html --&gt;</span>
+                  <span class="comment"
+                    >&lt;!-- Other html --&gt;</span
+                  >
                 </div>
               </code>
             </figure>
@@ -108,53 +141,69 @@
             <figure>
               <code class="code-block">
                 <div>
-                  <span class="comment">&lt;!-- Other html --&gt;</span>
+                  <span class="comment"
+                    >&lt;!-- Other html --&gt;</span
+                  >
                 </div>
 
                 <!-- <script src="https://unpkg.com/react@16/umd/react.development.js"></script> -->
                 <div>
                   <span class="html-tag"
-                    >&lt;script <span class="html-key">src=</span
+                    >&lt;script
+                    <span class="html-key">src=</span
                     ><span class="html-string"
                       >"https://unpkg.com/react@16/umd/react.development.js"</span
                     >&gt;</span
-                  ><span class="html-tag">&lt;/script&gt;</span>
+                  ><span class="html-tag"
+                    >&lt;/script&gt;</span
+                  >
                 </div>
 
                 <!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
                 <div>
                   <span class="html-tag"
-                    >&lt;script <span class="html-key">src=</span
+                    >&lt;script
+                    <span class="html-key">src=</span
                     ><span class="html-string"
                       >"https://unpkg.com/react-dom@16/umd/react-dom.development.js"</span
                     >&gt;</span
-                  ><span class="html-tag">&lt;/script&gt;</span>
+                  ><span class="html-tag"
+                    >&lt;/script&gt;</span
+                  >
                 </div>
 
                 <!-- <script src="myComponent.js"></script> -->
                 <div>
                   <span class="html-tag"
-                    >&lt;script <span class="html-key">src=</span
-                    ><span class="html-string">"myComponent.js"</span>&gt;</span
-                  ><span class="html-tag">&lt;/script&gt;</span>
+                    >&lt;script
+                    <span class="html-key">src=</span
+                    ><span class="html-string"
+                      >"myComponent.js"</span
+                    >&gt;</span
+                  ><span class="html-tag"
+                    >&lt;/script&gt;</span
+                  >
                 </div>
 
                 <br />
                 <div>
-                  <span class="html-tag">&lt;/body&gt;</span>
+                  <span class="html-tag"
+                    >&lt;/body&gt;</span
+                  >
                 </div>
               </code>
             </figure>
             <p>
-              Where <code>myComponent.js</code> contains the react component
-              that you wish to implement.
+              Where <code>myComponent.js</code> contains the
+              react component that you wish to implement.
             </p>
           </section>
 
           <section class="sub-section">
             <h4>Step 3</h4>
             <p>
-              Create and render your react component by putting this inside
+              Create and render your react component by
+              putting this inside
               <code>myComponent.js</code>.
             </p>
             <figure>
@@ -166,7 +215,8 @@
                 </div>
                 <div>&nbsp;render() {</div>
                 <div>
-                  &nbsp;&nbsp;return React.createElement("h1", null, "Hello
+                  &nbsp;&nbsp;return
+                  React.createElement("h1", null, "Hello
                   World");
                 </div>
                 <div>&nbsp;}</div>
@@ -177,25 +227,30 @@
                   document.getElementById("react-component-container");
                 </div>
                 <div>
-                  ReactDom.render(React.createElement(Hello World),
-                  domContainer);
+                  ReactDom.render(React.createElement(Hello
+                  World), domContainer);
                 </div>
               </code>
             </figure>
             <p>
-              Of course, this component doesn’t do much, or anything at all
-              really. But this does give you a basic idea of how react
-              components can be laid out.
+              Of course, this component doesn’t do much, or
+              anything at all really. But this does give you
+              a basic idea of how react components can be
+              laid out.
             </p>
           </section>
         </section>
 
-        <section class="sub-section" id="Creating a full React application">
+        <section
+          class="sub-section"
+          id="Creating a full React application"
+        >
           <h3>Creating a full React application</h3>
           <p>
-            For this method, we will be using npm to install the React packages.
-            To create a new react app, you need to install it using npm on the
-            command line.
+            For this method, we will be using npm to install
+            the React packages. To create a new react app,
+            you need to install it using npm on the command
+            line.
           </p>
           <figure>
             <code class="code-block">
@@ -204,9 +259,9 @@
             </code>
           </figure>
           <p>
-            This process could take several minutes to complete to be patient.
-            After this is complete, your main file structure should look like
-            this.
+            This process could take several minutes to
+            complete to be patient. After this is complete,
+            your main file structure should look like this.
           </p>
           <figure>
             <code>
@@ -221,17 +276,20 @@
             </code>
           </figure>
           <p>
-            These are not all the files that are listed, but these are the
-            important ones. App.js is the main pre-defined react component.
-            Editing this file will change what you see when you run
-            <code>npm start</code> when you are in the my-app directory.
+            These are not all the files that are listed, but
+            these are the important ones. App.js is the main
+            pre-defined react component. Editing this file
+            will change what you see when you run
+            <code>npm start</code> when you are in the
+            my-app directory.
           </p>
           <p>
-            As you can see, unlike the last example, this project uses JSX. That
-            is because when you ran
-            <code>npx create-react-app my-app</code>, it installed a JSX
-            compiler that converts your project into regular javascript that a
-            browser can understand.
+            As you can see, unlike the last example, this
+            project uses JSX. That is because when you ran
+            <code>npx create-react-app my-app</code>, it
+            installed a JSX compiler that converts your
+            project into regular javascript that a browser
+            can understand.
           </p>
         </section>
       </section>
