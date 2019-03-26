@@ -41,6 +41,19 @@
       </nav>
     </aside>
 
+    <aside class="page-navigation-container">
+      <nav class="page-navigation">
+        <ul>
+          <li>
+            <a href="#Embedded expressions">Embedded expressions</a>
+          </li>
+          <li>
+            <a href="#Lists and Keys">Lists and Keys</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
     <main>
       <h2 class="main-header">JSX</h2>
       <p>
@@ -51,7 +64,7 @@
         writing code.
       </p>
       <section class="sub-section">
-        <h3 id="Embedded Expressions">Embedded expressions</h3>
+        <h3 id="Embedded expressions">Embedded expressions</h3>
         <p>
           JSX allows for embedded javascript with the use of ‘{}’. You can place
           any valid javascript inside curly braces and your JSX will still
@@ -114,7 +127,7 @@
             <div class="code-indent-2">return (</div>
             <div class="code-indent-3">&lt;div className="App"&gt;</div>
             <div class="code-indent-4">&lt;ul&gt;</div>
-            <div class="code-indent-5">{this.data.map(item => (</div>
+            <div class="code-indent-5">{this.data.map(item =&gt; (</div>
             <div class="code-indent-6">
               &lt;li className="listItem" key={item}&gt;&lt;/li&gt;
             </div>

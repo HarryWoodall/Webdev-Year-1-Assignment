@@ -4,11 +4,12 @@ body {
   padding: 0px;
   font-family: "Open Sans", Verdana, sans-serif;
   background-color: rgb(238, 238, 238);
+  scroll-behavior: smooth; /* https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */
 }
 
 nav,
 header {
-  background-color: #313131;
+  background-color: #222222;
   color: white;
 }
 
@@ -17,18 +18,24 @@ nav span {
   margin: 5px;
 }
 
-nav.page-navigation {
-  background-color: white;
-  border: 1px solid black;
+aside.page-navigation-container {
   box-shadow: 1px 0px 10px rgb(184, 184, 184);
 }
 
+nav.page-navigation {
+  background-color: transparent;
+}
+
 nav.page-navigation span a {
-  color: black;
+  color: white;
+}
+
+aside.page-navigation-container {
+  background-color: #222222;
 }
 
 header {
-  background-color: #222222;
+  background-color: #313131;
   font-size: 150%;
 }
 
@@ -41,6 +48,7 @@ footer {
 main .main-header {
   font-size: 200%;
   background-color: #313131;
+  background-color: #222222;
   color: white;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
