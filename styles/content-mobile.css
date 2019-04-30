@@ -1,0 +1,177 @@
+@media (max-width: 1500px) {
+  aside.page-navigation-container {
+    display: none;
+  }
+}
+
+@media (max-width: 1150px) {
+  main,
+  footer {
+    width: 600px;
+  }
+}
+
+@media (max-width: 950px) {
+  html,
+  body {
+    background-color: white;
+    display: block;
+    height: 100%;
+  }
+
+  main,
+  footer {
+    width: 100%;
+    padding: 0px;
+    padding-top: 30px;
+    box-shadow: none;
+  }
+
+  main .main-header {
+    margin-left: 125px;
+    margin-top: 0px;
+  }
+
+  section {
+    width: 70%;
+    padding: 0px;
+    /* padding-left: 50px; */
+    margin: auto;
+  }
+
+  section.sub-section {
+    margin: auto;
+    width: 90%;
+  }
+
+  aside#left-menu {
+    transform: translate(-300px, 0);
+  }
+
+  aside #hamburger-menu-button {
+    visibility: visible;
+  }
+
+  aside#menu-icon-container {
+    z-index: 1;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 210px auto;
+  }
+
+  header a h1 {
+    display: inline;
+  }
+
+  header #clear-menu-button {
+    display: inline;
+    place-self: center;
+    visibility: visible;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 750px) {
+  header h1 {
+    font-size: 90%;
+  }
+
+  header #clear-menu-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  nav ul {
+    font-size: 150%;
+  }
+
+  aside #hamburger-menu-button {
+    left: 20px;
+    width: 30px;
+    height: 30px;
+  }
+
+  main .main-header {
+    margin-left: 10px;
+    font-size: 125%;
+  }
+
+  section {
+    width: 90%;
+  }
+
+  p {
+    font-size: 125%;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .sub-section h3 {
+    font-size: 125%;
+  }
+
+  code {
+    font-size: 90%;
+  }
+
+  /* top menu */
+
+  aside#left-menu {
+    display: none;
+  }
+
+  aside#menu-icon-container {
+    display: none;
+  }
+
+  main {
+    padding-top: 75px;
+  }
+
+  header#top-menu {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  header#top-menu h2 {
+    width: 200px;
+    font-size: 100%;
+    grid-column: 1;
+    align-self: center;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  #top-menu-nav {
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: auto;
+    top: 50px;
+    right: 0px;
+    transform: translate(300px, 0px);
+  }
+
+  header#top-menu #top-menu-button-container {
+    width: 50px;
+    height: 50px;
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  #top-menu-button-container input {
+    height: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+  figure,
+  .sub-section figure {
+    margin: 10px;
+    transform: translate(0, 0);
+  }
+}

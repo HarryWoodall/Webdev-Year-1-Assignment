@@ -1,0 +1,138 @@
+html,
+body {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* fixed header, always at the top */
+header {
+  display: grid;
+  grid-template-columns: 300px auto;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+header h1 {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+  margin: 0px;
+  font-size: 125%;
+}
+
+header nav#main-nav {
+  grid-row: 1;
+  grid-column: 2;
+  align-self: center;
+}
+
+header nav#main-nav ul li {
+  display: inline;
+  margin-left: 30px;
+}
+
+/* Hide button until min-width achieved, but still add style */
+header input {
+  display: none;
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  height: 80%;
+  padding-right: 10px;
+}
+
+nav {
+  background-color: transparent;
+}
+
+/* Hide top navigation until min-width achieved */
+nav#top-menu-nav {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  width: 300px;
+  top: 50px;
+  right: 0px;
+
+  background-color: #222222;
+}
+
+nav#top-menu-nav ul li {
+  margin: 20px;
+  margin-top: 40px;
+  margin-bottom: 34px;
+  font-size: 150%;
+}
+
+main {
+  border: none;
+  box-shadow: none;
+  grid-column: col-2 / col-11;
+}
+
+p {
+  font-size: 125%;
+  line-height: 1.5em;
+}
+
+#content,
+#introduction-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 10px;
+  /* https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
+  grid-template-areas: "col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12";
+}
+
+#title-image {
+  padding-top: 100px;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  text-align: center;
+  grid-column: col-1 / col-12;
+}
+
+#title-banner-img {
+  height: 100%;
+  object-fit: cover;
+  margin: auto;
+}
+
+.intro-item {
+  margin: 20px;
+}
+
+section h2 {
+  font-size: 200%;
+}
+
+.intro-1 {
+  grid-column: col-1 / col-4;
+}
+
+.intro-2 {
+  grid-column: col-5 / col-8;
+}
+
+.intro-3 {
+  grid-column: col-9 / col-12;
+}
+
+.intro-4 {
+  grid-column: col-2 / col-11;
+}
+
+#menu-icon {
+  width: 100px;
+  height: 100px;
+}
+
+footer {
+  grid-column: col-1 / col-12;
+  padding: 30px;
+}

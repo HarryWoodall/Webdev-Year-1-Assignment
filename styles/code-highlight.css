@@ -1,0 +1,56 @@
+code {
+  font-family: consolas;
+}
+
+code.code-block {
+  position: relative;
+  display: block;
+  overflow-y: auto;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  padding-top: 50px;
+  width: 90%;
+
+  color: white;
+
+  /* Gives the background a 2 tone effect */
+  background: linear-gradient(
+    180deg,
+    rgb(141, 180, 231) 30px,
+    rgb(44, 48, 65) 1px
+  );
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  box-shadow: 5px 5px 5px 2px gray;
+}
+
+code .code-header {
+  background-color: rgb(69, 76, 104);
+  font-size: 125%;
+  font-weight: 100;
+  font-style: italic;
+
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+
+  height: 20px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+@media (max-width: 750px) {
+  code.code-block {
+    font-size: 100%;
+    box-shadow: 3px 3px 5px 1px gray;
+  }
+}

@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
+    <title>Getting Started</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/styles.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="layout-01/styles.css"
+      href="styles/content.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="layout-01/layout-01.css"
+      href="styles/code-highlight.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="code-highlight.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="layout-01/layout-01-mobile.css"
+      href="styles/content-mobile.css"
     />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300"
@@ -39,38 +36,66 @@
     <!-- https://fonts.google.com/?selection.family=Open+Sans:300 -->
   </head>
   <body>
-    <aside>
+    <aside id="left-menu">
       <header>
-        <a href="index.html"><h1>React Guide</h1></a>
+        <h1><a href="index.html">React Guide</a></h1>
+        <input
+          type="image"
+          src="resources/images/baseline-clear-24px.svg"
+          id="clear-menu-button"
+          alt="clear button"
+          onclick="hideMenu()"
+        />
       </header>
       <nav>
         <ul>
-          <li>
-            <a href="getting_started.html"
-              >Getting Started</a
-            >
+          <li class="current-page">
+            <a href="getting_started.html">Getting Started</a>
           </li>
           <li><a href="components.html">Components</a></li>
           <li>
-            <a href="stateful_components.html"
-              >Stateful Components</a
-            >
+            <a href="stateful_components.html">Stateful Components</a>
           </li>
           <li><a href="JSX.html">JSX</a></li>
         </ul>
       </nav>
     </aside>
 
+    <header id="top-menu">
+      <h2><a href="index.html">React Guide</a></h2>
+      <div id="top-menu-button-container">
+        <input
+          type="image"
+          src="resources/images/baseline-menu-24px.white.svg"
+          alt="Hamburger Menu"
+          onclick="toggleTopMenu()"
+        />
+      </div>
+    </header>
+
+    <nav id="top-menu-nav">
+      <ul>
+        <li>
+          <a href="getting_started.html">Getting Started</a>
+        </li>
+        <li><a href="components.html">Components</a></li>
+        <li>
+          <a href="stateful_components.html">Stateful Components</a>
+        </li>
+        <li><a href="JSX.html">JSX</a></li>
+      </ul>
+    </nav>
+
     <aside class="page-navigation-container">
       <nav class="page-navigation">
         <ul>
           <li>
-            <a href="#Adding React to an existing project"
-              >Adding React to an existing application</a
+            <a href="#Adding-react-to-an-existing-project"
+              >Adding React to an existing project</a
             >
           </li>
           <li>
-            <a href="#Creating a full React application"
+            <a href="#Creating-a-full-react-application"
               >Creating a full React application</a
             >
           </li>
@@ -78,221 +103,152 @@
       </nav>
     </aside>
 
-    <main>
+    <aside id="menu-icon-container">
+      <input
+        type="image"
+        src="resources/images/baseline-menu-24px.svg"
+        id="hamburger-menu-button"
+        alt="Hamburger Menu"
+        onclick="showMenu()"
+      />
+    </aside>
+
+    <main id="main-content">
       <!-- Guide Starts -->
+      <h2 class="main-header">Getting Started</h2>
       <section>
-        <h2 class="main-header">Getting Started</h2>
         <p>
-          There are 2 ways to add React to your website. The
-          first way involves importing small snippets of
-          react code into an existing project, the other is
-          making a full blown react app from scratch. The
-          second way is more involved, but also gives you
-          many benefits.
+          There are 2 ways to add React to your website. The first way involves
+          importing small snippets of React code into an existing project, the
+          other is making a full blown react app from scratch.
         </p>
 
         <!-- Guide to adding react to an existing project -->
-        <section
-          class="sub-section"
-          id="Adding React to an existing project"
-        >
+        <div id="Adding-react-to-an-existing-project">
           <h3>Adding React to an existing project</h3>
 
-          <section class="sub-section">
+          <div class="sub-section">
             <h4>Step 1</h4>
             <p>
-              Add a container that you wish your react
-              component to be placed.
+              Add a container that you wish your React component to be placed.
             </p>
             <figure>
-              <code class="code-block">
-                <div>
-                  <span class="comment"
-                    >&lt;!-- Other html --&gt;</span
-                  >
-                </div>
-
-                <!-- <div id="react-component-container"></div> -->
-                <div>
-                  <span class="html-tag"
-                    >&lt;div
-                    <span class="html-key">id=</span
-                    ><span class="html-string"
-                      >"react-component-container"</span
-                    >&gt;</span
-                  ><span class="html-tag"
-                    >&lt;/div&gt;</span
-                  >
-                </div>
-
-                <div>
-                  <span class="comment"
-                    >&lt;!-- Other html --&gt;</span
-                  >
-                </div>
-              </code>
+              <pre>
+                <code class="code-block">
+&lt;!-- Other html --&gt;
+&lt;div id="react-component-container"&gt;&lt;/div&gt;
+&lt;!-- Other html --&gt;
+                </code>
+              </pre>
             </figure>
-          </section>
+          </div>
 
-          <section class="sub-section">
+          <div class="sub-section">
             <h4>Step 2</h4>
             <p>Add Scripts to your webpage</p>
 
             <figure>
-              <code class="code-block">
-                <div>
-                  <span class="comment"
-                    >&lt;!-- Other html --&gt;</span
-                  >
-                </div>
+              <pre>
+                <code class="code-block">
+&lt;!-- Other html --&gt;
+&lt;script src="https://unpkg.com/react@16/umd/react.development.js"&gt;&lt;/script&gt;
+&lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"&gt;&lt;/script&gt;
+&lt;script src="myComponent.js"&gt;&lt;/script&gt;
 
-                <!-- <script src="https://unpkg.com/react@16/umd/react.development.js"></script> -->
-                <div>
-                  <span class="html-tag"
-                    >&lt;script
-                    <span class="html-key">src=</span
-                    ><span class="html-string"
-                      >"https://unpkg.com/react@16/umd/react.development.js"</span
-                    >&gt;</span
-                  ><span class="html-tag"
-                    >&lt;/script&gt;</span
-                  >
-                </div>
-
-                <!-- <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
-                <div>
-                  <span class="html-tag"
-                    >&lt;script
-                    <span class="html-key">src=</span
-                    ><span class="html-string"
-                      >"https://unpkg.com/react-dom@16/umd/react-dom.development.js"</span
-                    >&gt;</span
-                  ><span class="html-tag"
-                    >&lt;/script&gt;</span
-                  >
-                </div>
-
-                <!-- <script src="myComponent.js"></script> -->
-                <div>
-                  <span class="html-tag"
-                    >&lt;script
-                    <span class="html-key">src=</span
-                    ><span class="html-string"
-                      >"myComponent.js"</span
-                    >&gt;</span
-                  ><span class="html-tag"
-                    >&lt;/script&gt;</span
-                  >
-                </div>
-
-                <br />
-                <div>
-                  <span class="html-tag"
-                    >&lt;/body&gt;</span
-                  >
-                </div>
-              </code>
+&lt;/body&gt;
+                </code>
+              </pre>
             </figure>
             <p>
-              Where <code>myComponent.js</code> contains the
-              react component that you wish to implement.
+              Where <code>myComponent.js</code> contains the react component
+              that you wish to implement.
             </p>
-          </section>
+          </div>
 
-          <section class="sub-section">
+          <div class="sub-section">
             <h4>Step 3</h4>
             <p>
-              Create and render your react component by
-              putting this inside
+              Create and render your react component by putting this code inside
               <code>myComponent.js</code>.
             </p>
             <figure>
-              <code class="code-block">
-                <div>"use strict"</div>
-                <br />
-                <div>
-                  class HelloWorld extends React.Component {
-                </div>
-                <div>&nbsp;render() {</div>
-                <div>
-                  &nbsp;&nbsp;return
-                  React.createElement("h1", null, "Hello
-                  World");
-                </div>
-                <div>&nbsp;}</div>
-                <div>}</div>
-                <br />
-                <div>
-                  const domContainer =
-                  document.getElementById("react-component-container");
-                </div>
-                <div>
-                  ReactDom.render(React.createElement(Hello
-                  World), domContainer);
-                </div>
-              </code>
-            </figure>
-            <p>
-              Of course, this component doesn’t do much, or
-              anything at all really. But this does give you
-              a basic idea of how react components can be
-              laid out.
-            </p>
-          </section>
-        </section>
+              <pre>
+                <code class="code-block">                  
+"use strict"
 
-        <section
-          class="sub-section"
-          id="Creating a full React application"
-        >
+class HelloWorld extends React.Component {
+  render() {
+    return React.createElement("h1", null, "Hello World");
+  }
+}
+
+const domContainer = document.getElementById("react-component-container");
+ReactDom.render(React.createElement(Hello World), domContainer);
+                </code>
+              </pre>
+            </figure>
+          </div>
+          <p>
+            Of course, this component doesn’t do much, but this does give you a
+            basic idea of how react components can be laid out.
+          </p>
+        </div>
+
+        <div id="Creating-a-full-react-application">
           <h3>Creating a full React application</h3>
           <p>
-            For this method, we will be using npm to install
-            the React packages. To create a new react app,
-            you need to install it using npm on the command
-            line.
+            For this method, we will be using npm to install the React packages.
+            To create a new react app, you need to install it using npm on the
+            command line.
           </p>
           <figure>
-            <code class="code-block">
-              <div>nxp create-react-app my-app</div>
-              <div>cd my-app</div>
-            </code>
+            <pre>
+              <code class="code-block">
+nxp create-react-app my-app
+cd my-app                  
+              </code>
+            </pre>
           </figure>
           <p>
-            This process could take several minutes to
-            complete to be patient. After this is complete,
-            your main file structure should look like this.
+            This process could take several minutes to complete so be patient.
+            After this is complete, your main file structure should look like
+            this.
           </p>
           <figure>
-            <code>
-              <div>public</div>
-              <div class="code-indent-2">index.html</div>
-              <div>src</div>
-              <div class="code-indent-2">app.css</div>
-              <div class="code-indent-2">app.js</div>
-              <div class="code-indent-2">index.css</div>
-              <div class="code-indent-2">index.js</div>
-              <div>package.json</div>
-            </code>
+            <pre>
+              <code>              
+public
+  └index.html
+src
+  └app.css
+  └app.js
+  └index.css
+  └index.js
+package.json
+              </code>
+            </pre>
           </figure>
           <p>
-            These are not all the files that are listed, but
-            these are the important ones. App.js is the main
-            pre-defined react component. Editing this file
-            will change what you see when you run
-            <code>npm start</code> when you are in the
-            my-app directory.
+            These are not all the files that are listed, but these are the
+            important ones. <code>app.js</code> is the main pre-defined React
+            component. Editing this file will change what you see when you run
+            <code>npm start</code> when you are in the my-app directory.
           </p>
           <p>
-            As you can see, unlike the last example, this
-            project uses JSX. That is because when you ran
-            <code>npx create-react-app my-app</code>, it
-            installed a JSX compiler that converts your
-            project into regular javascript that a browser
-            can understand.
+            As you can see, unlike the last example, this project uses
+            <abbr title="Javascript Extensible Markup Language">JSX</abbr>. That
+            is because when you ran <code>npx create-react-app my-app</code>, it
+            installed a
+            <abbr title="Javascript Extensible Markup Language">JSX</abbr>
+            compiler that converts
+            <abbr title="Javascript Extensible Markup Language">JSX</abbr>
+            syntax into regular javascript that a browser can understand.
           </p>
-        </section>
+        </div>
       </section>
     </main>
+
+    <!-- scripts  -->
+    <script src="resources/scripts/toggleMenu.js"></script>
   </body>
 </html>

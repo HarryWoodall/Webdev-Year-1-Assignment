@@ -1,36 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
+    <title>JSX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="styles/styles.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="layout-01/styles.css"
+      href="styles/content.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="layout-01/layout-01.css"
+      href="styles/code-highlight.css"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="code-highlight.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="layout-01/layout-01-mobile.css"
+      href="styles/content-mobile.css"
     />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300"
@@ -38,166 +35,202 @@
     />
   </head>
   <body>
-    <aside>
+    <aside id="left-menu">
       <header>
-        <a href="index.html"><h1>React Guide</h1></a>
+        <h1><a href="index.html">React Guide</a></h1>
+        <input
+          type="image"
+          src="resources/images/baseline-clear-24px.svg"
+          id="clear-menu-button"
+          alt="clear button"
+          onclick="hideMenu()"
+        />
       </header>
       <nav>
         <ul>
           <li>
-            <a href="getting_started.html"
-              >Getting Started</a
-            >
+            <a href="getting_started.html">Getting Started</a>
           </li>
           <li><a href="components.html">Components</a></li>
           <li>
-            <a href="stateful_components.html"
-              >Stateful Components</a
-            >
+            <a href="stateful_components.html">Stateful Components</a>
           </li>
-          <li><a href="JSX.html">JSX</a></li>
+          <li class="current-page">
+            <a href="JSX.html">JSX</a>
+          </li>
         </ul>
       </nav>
     </aside>
+
+    <header id="top-menu">
+      <h2><a href="index.html">React Guide</a></h2>
+      <div id="top-menu-button-container">
+        <input
+          type="image"
+          src="resources/images/baseline-menu-24px.white.svg"
+          alt="Hamburger Menu"
+          onclick="toggleTopMenu()"
+        />
+      </div>
+    </header>
+
+    <nav id="top-menu-nav">
+      <ul>
+        <li>
+          <a href="getting_started.html">Getting Started</a>
+        </li>
+        <li><a href="components.html">Components</a></li>
+        <li>
+          <a href="stateful_components.html">Stateful Components</a>
+        </li>
+        <li>
+          <a href="JSX.html">JSX</a>
+        </li>
+      </ul>
+    </nav>
 
     <aside class="page-navigation-container">
       <nav class="page-navigation">
         <ul>
-          <li>
-            <a href="#Embedded expressions"
-              >Embedded expressions</a
-            >
-          </li>
-          <li>
-            <a href="#Lists and Keys">Lists and Keys</a>
-          </li>
+          <li><a href="#Embedded-expressions">Embedded expressions</a></li>
+          <li><a href="#Lists-and-keys">Lists and Keys</a></li>
         </ul>
       </nav>
     </aside>
 
-    <main>
-      <h2 class="main-header">JSX</h2>
-      <p>
-        JSX or javascript extension, is used by React to
-        describe what a UI element should look like. It is
-        in essence HTML with the full power of javascript
-        behind it. React doesn’t require JSX but it is very
-        useful as visual aid and it also allows for more
-        useful errors and warnings when writing code.
-      </p>
-      <section class="sub-section">
-        <h3 id="Embedded expressions">
-          Embedded expressions
-        </h3>
+    <aside id="menu-icon-container">
+      <input
+        type="image"
+        src="resources/images/baseline-menu-24px.svg"
+        id="hamburger-menu-button"
+        alt="Hamburger Menu"
+        onclick="showMenu()"
+      />
+    </aside>
+
+    <main id="main-content">
+      <h2 class="main-header">
+        JSX
+      </h2>
+      <section>
         <p>
-          JSX allows for embedded javascript with the use of
-          ‘{}’. You can place any valid javascript inside
-          curly braces and your JSX will still compile. For
-          example
+          <abbr title="Javascript Extensible Markup Language">JSX</abbr> or
+          <dfn>javascript extensible markup language</dfn>, is used by React to
+          describe what a UI element should look like. It is in essence
+          <abbr title="Hyper Text Markup Language">HTML</abbr> with the full
+          power of javascript behind it. React doesn’t require
+          <abbr title="Javascript Extensible Markup Language">JSX</abbr> but it
+          is very useful as visual aid and it also allows for more useful errors
+          and warnings when debugging code.
         </p>
-        <figure>
-          <code class="code-block">
-            <div>const name = "George";</div>
-            <div>
-              const element = &lt;h1&gt;Hello, my name is
-              {name}&lt;/h1&gt;
-            </div>
-          </code>
-        </figure>
-        <p>
-          The variable name is inserted into a JSX element,
-          returning the h1 element ‘Hello, my name is
-          George’
-        </p>
-        <p>
-          JSX, not only allows variables, but method calls
-          too.
-        </p>
-        <figure>
-          <code class="code-block">
-            <div>function getDate(date) {</div>
-            <div class="code-indent-1">Return (</div>
-            <div class="code-indent-2">
-              Date.day + "/" + date.month + "/" + date.year
-            </div>
-            <div class="code-indent-1">);</div>
-            <div>}</div>
-            <br />
-            <div>Let date = {</div>
-            <div class="code-indent-1">Day: 7,</div>
-            <div class="code-indent-1">Month: 3,</div>
-            <div class="code-indent-1">Year: 2019</div>
-            <div>}</div>
-            <br />
-            <div>
-              const element = &lt;h3&gt;The date is
-              {getDate(date)}&lt;/h3&gt;
-            </div>
-          </code>
-        </figure>
-      </section>
-      <section class="sub-section">
-        <h3 id="Lists and Keys">Lists and Keys</h3>
-        <p>
-          In JSX, lists need additional information as they
-          get stored without order. So if you wish to give
-          your list consistency, then you should give each
-          of your list items a unique key.
-        </p>
-        <p>
-          Here is an example of a list written in React.
-        </p>
-        <figure>
-          <code class="code-block">
-            <div>class App extends Component {</div>
-            <div class="code-indent-1">constructor() {</div>
-            <div class="code-indent-2">super();</div>
-            <div class="code-indent-2">
-              this.data = ["item1", "item2", "item3",
-              "item4"];
-            </div>
-            <div class="code-indent-1">}</div>
-            <br />
-            <div class="code-indent-1">render() {</div>
-            <div class="code-indent-2">return (</div>
-            <div class="code-indent-3">
-              &lt;div className="App"&gt;
-            </div>
-            <div class="code-indent-4">&lt;ul&gt;</div>
-            <div class="code-indent-5">
-              {this.data.map(item =&gt; (
-            </div>
-            <div class="code-indent-6">
-              &lt;li className="listItem"
-              key={item}&gt;&lt;/li&gt;
-            </div>
-            <div class="code-indent-7">{item}</div>
-            <div class="code-indent-6">&lt;/li&gt;</div>
-            <div class="code-indent-5">))}</div>
-            <div class="code-indent-4">&lt;/ul&gt;</div>
-            <div class="code-indent-3">&lt;/div&gt;</div>
-            <div class="code-indent-2">);</div>
-            <div class="code-indent-1">}</div>
-            <div>}</div>
-            <br />
-            <div>export default App;</div>
-          </code>
-        </figure>
-        <p>
-          It gives each item in the array its own key, in
-          this case its own value, to ensure consistency.
-          The value of each key has to be unique, so if the
-          keys were to contain repeating values, consistency
-          would not be guaranteed. The result of this code
-          would look something like this.
-        </p>
-        <figure>
-          <img
-            src="resources/images/jsx-img-01.png"
-            alt="List and Keys result"
-          />
-        </figure>
+        <div class="sub-section">
+          <h3 id="Embedded-expressions">
+            Embedded expressions
+          </h3>
+          <p>
+            <abbr title="Javascript Extensible Markup Language">JSX</abbr>
+            allows for embedded javascript with the use of <code>{}</code>. You
+            can place any valid javascript inside curly braces and your
+            <abbr title="Javascript Extensible Markup Language">JSX</abbr> will
+            still compile. For example
+          </p>
+          <figure>
+            <pre>
+              <code class="code-block">
+const name = "George";
+const element = &lt;h1&gt;Hello, my name is {name}&lt;/h1&gt;
+              </code>
+            </pre>
+          </figure>
+          <p>
+            The variable name is inserted into a
+            <abbr title="Javascript Extensible Markup Language">JSX</abbr>
+            element, returning the h1 element
+            <samp>Hello, my name is George</samp>
+            <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp -->
+          </p>
+          <p>
+            <abbr title="Javascript Extensible Markup Language">JSX</abbr>, not
+            only allows variables, but method calls too.
+          </p>
+          <figure>
+            <pre>
+              <code class="code-block">
+function getDate(date) {
+  Return (
+    Date.day + "/" + date.month + "/" + date.year
+  );
+}
+  
+Let date = {
+  Day: 7,
+  Month: 3,
+  Year: 2019
+}
+
+const element = &lt;h3&gt;The date is {getDate(date)}&lt;/h3&gt;
+              </code>
+            </pre>
+          </figure>
+        </div>
+        <div class="sub-section">
+          <h3 id="Lists-and-keys">Lists and Keys</h3>
+          <p>
+            In <abbr title="Javascript Extensible Markup Language">JSX</abbr>,
+            lists need additional information as they get stored without order.
+            So if you wish to give your list consistency, then you should give
+            each of your list items a unique key.
+          </p>
+          <p>
+            Here is an example of a list written in React.
+          </p>
+
+          <figure>
+            <pre>
+              <code class="code-block">
+class App extends Component {
+  constructor() {
+    super();
+    this.data = ["item1", "item2", "item3", "item4"];
+  }
+
+  render() {
+    return (
+      &lt;div className="App"&gt;
+        &lt;ul&gt;
+          {this.data.map(item =&gt; (
+            &lt;li className="listItem" key={item}&gt;&lt;/li&gt;
+              {item}
+            &lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+export default App;
+              </code>
+            </pre>
+          </figure>
+          <p>
+            It gives each item in the array its own key, in this case its own
+            value, to ensure consistency. The value of each key has to be
+            unique, so if the keys were to contain repeating values, consistency
+            would not be guaranteed. The result of this code would look
+            something like this.
+          </p>
+          <figure>
+            <img
+              src="resources/images/jsx-img-01.png"
+              alt="List and Keys result"
+            />
+          </figure>
+        </div>
       </section>
     </main>
+
+    <!-- scripts  -->
+    <script src="resources/scripts/toggleMenu.js"></script>
   </body>
 </html>

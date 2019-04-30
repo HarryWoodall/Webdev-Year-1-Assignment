@@ -1,0 +1,110 @@
+/* Style Sheet that determines non-structural design and layout */
+
+/* Universal font used in website, 
+background color set to an off white,
+smooth scrolling for better asthetics */
+html,
+body {
+  font-family: "Open Sans", Verdana, sans-serif;
+  background-color: rgb(238, 238, 238);
+  scroll-behavior: smooth; /* https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */
+  overflow-x: hidden;
+}
+
+/* Navigation bar and header font color should be white */
+nav,
+header {
+  color: white;
+}
+
+header {
+  background-color: #313131;
+  font-size: 150%;
+}
+
+nav {
+  background-color: #222222;
+}
+
+/* Remove bullet points from list items */
+nav ul {
+  list-style-type: none;
+}
+
+aside.page-navigation-container {
+  box-shadow: 1px 0px 10px rgb(184, 184, 184);
+  background-color: #222222;
+}
+
+nav.page-navigation {
+  background-color: transparent;
+}
+
+nav.page-navigation span a {
+  color: white;
+}
+
+/* icon should always be on the top */
+aside#menu-icon-container {
+  z-index: -1;
+}
+
+#title-image {
+  background-color: #222222;
+}
+
+main {
+  background-color: white;
+  box-shadow: 1px 0px 10px rgb(184, 184, 184);
+}
+
+main .main-header {
+  font-size: 200%;
+  background-color: #222222;
+  color: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+/* remove undelining of links */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a.para-link {
+  text-decoration: underline;
+  color: black;
+}
+
+/* unless hovered over */
+a:hover {
+  text-decoration: underline;
+}
+
+/* add animations for fluid content */
+#left-menu,
+#main-content,
+#top-menu-nav {
+  transition-duration: 0.5s;
+}
+
+/* add style to show which page is active */
+li.current-page {
+  background-color: white;
+}
+
+li.current-page a {
+  color: #222222;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #313131;
+  color: white;
+}
+
+footer .footnote {
+  font-size: 80%;
+  font-style: italic;
+}
