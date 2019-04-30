@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Components</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -49,11 +52,17 @@
       <nav>
         <ul>
           <li>
-            <a href="getting_started.html">Getting Started</a>
+            <a href="getting_started.html"
+              >Getting Started</a
+            >
           </li>
-          <li class="current-page"><a href="components.html">Components</a></li>
+          <li class="current-page">
+            <a href="components.html">Components</a>
+          </li>
           <li>
-            <a href="stateful_components.html">Stateful Components</a>
+            <a href="stateful_components.html"
+              >Stateful Components</a
+            >
           </li>
           <li><a href="JSX.html">JSX</a></li>
         </ul>
@@ -79,7 +88,9 @@
         </li>
         <li><a href="components.html">Components</a></li>
         <li>
-          <a href="stateful_components.html">Stateful Components</a>
+          <a href="stateful_components.html"
+            >Stateful Components</a
+          >
         </li>
         <li><a href="JSX.html">JSX</a></li>
       </ul>
@@ -97,25 +108,35 @@
 
     <main id="main-content">
       <h2 class="main-header">Components</h2>
-      <p>
-        React renders content onto a webpage with the use of components.
-        Components are easy to use, can contain other components and can be as
-        simple or complex as you want. Splitting up your webpage’s functionality
-        into components makes it easier to debug, maintain and add features.
-      </p>
-      <p>
-        To create your own component, simply import React into your javascript
-        file and create a class that extends <code>Component</code>. To display
-        content, you simply override the <code>render()</code> function and have
-        it return what you wish to display, usually written in the form of
-        <abbr title="Javasctipt Extensible Markup Language">JSX</abbr>.
-      </p>
-      <p>
-        Here is a simple React component that renders a button that will alert
-        the user when it has been clicked.
-      </p>
-      <figure>
-        <pre>
+      <div class="content-wrapper">
+        <p>
+          React renders content onto a webpage with the use
+          of components. Components are easy to use, can
+          contain other components and can be as simple or
+          complex as you want. Splitting up your webpage’s
+          functionality into components makes it easier to
+          debug, maintain and add features.
+        </p>
+        <p>
+          To create your own component, simply import React
+          into your javascript file and create a class that
+          extends <code>Component</code>. To display
+          content, you simply override the
+          <code>render()</code> function and have it return
+          what you wish to display, usually written in the
+          form of
+          <abbr
+            title="Javasctipt Extensible Markup Language"
+            >JSX</abbr
+          >.
+        </p>
+        <p>
+          Here is a simple React component that renders a
+          button that will alert the user when it has been
+          clicked.
+        </p>
+        <figure>
+          <pre>
             <code class="code-block">
 import React, { Component } from "react";
 
@@ -138,31 +159,42 @@ class Button extends Component {
 export default Button;
             </code>
           </pre>
-      </figure>
-      <p>
-        Inside the render method, there is syntax that isn’t valid javascript,
-        this is
-        <abbr title="Javasctipt Extensible Markup Language">JSX</abbr>. Even
-        though it looks similar to
-        <abbr title="Hyper Text Markup Language">HTML</abbr>, there are a few
-        noticeable differences. In
-        <abbr title="Hyper Text Markup Language">HTML</abbr>. To define an
-        element’s class, the syntax looks like
-        <code>class=”name-of-class”</code>. But because <code>class</code> is a
-        reserved word in javascript, react has opted to use
-        <code>className</code> to define an element’s class. Using
-        <code>{}</code> you are able to pass regular javascript into
-        <abbr title="Javasctipt Extensible Markup Language">JSX</abbr>. You can
-        see this happening where the button defined its
-        <code>onClick</code> parameter.
-        <a href="JSX.html" class="para-link">learn more about JSX</a>
-      </p>
-      <p>
-        If you wish to place this component inside an existing component, it is
-        a simple as importing and placing it where you want.
-      </p>
-      <figure>
-        <pre>
+        </figure>
+        <p>
+          Inside the render method, there is syntax that
+          isn’t valid javascript, this is
+          <abbr
+            title="Javasctipt Extensible Markup Language"
+            >JSX</abbr
+          >. Even though it looks similar to
+          <abbr title="Hyper Text Markup Language"
+            >HTML</abbr
+          >, there are a few noticeable differences. In
+          <abbr title="Hyper Text Markup Language"
+            >HTML</abbr
+          >. To define an element’s class, the syntax looks
+          like <code>class=”name-of-class”</code>. But
+          because <code>class</code> is a reserved word in
+          javascript, react has opted to use
+          <code>className</code> to define an element’s
+          class. Using <code>{}</code> you are able to pass
+          regular javascript into
+          <abbr
+            title="Javasctipt Extensible Markup Language"
+            >JSX</abbr
+          >. You can see this happening where the button
+          defined its <code>onClick</code> parameter.
+          <a href="JSX.html" class="para-link"
+            >learn more about JSX</a
+          >
+        </p>
+        <p>
+          If you wish to place this component inside an
+          existing component, it is a simple as importing
+          and placing it where you want.
+        </p>
+        <figure>
+          <pre>
             <code class="code-block">
 import "./MyButton"
 
@@ -177,7 +209,8 @@ class App extends Component {
 }
             </code>
           </pre>
-      </figure>
+        </figure>
+      </div>
     </main>
 
     <!-- scripts  -->
