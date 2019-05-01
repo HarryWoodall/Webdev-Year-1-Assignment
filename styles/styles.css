@@ -7,7 +7,7 @@ html,
 body {
   font-family: "Open Sans", Verdana, sans-serif;
   background-color: rgb(238, 238, 238);
-  scroll-behavior: smooth; /* https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 

@@ -54,6 +54,7 @@ aside#menu-icon-container {
   z-index: 1;
 }
 
+/* Change 3 columns into 2 */
 @media (max-width: 1150px) {
   header {
     font-size: 125%;
@@ -84,6 +85,7 @@ aside#menu-icon-container {
   }
 }
 
+/* Put everything into 1 column */
 @media (max-width: 770px) {
   header {
     height: 50px;

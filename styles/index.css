@@ -111,6 +111,7 @@ section h2 {
   font-size: 200%;
 }
 
+/* Set the colums for the Intro items */
 .intro-1 {
   grid-column: col-1 / col-4;
 }
