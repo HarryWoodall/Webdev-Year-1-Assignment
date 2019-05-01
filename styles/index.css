@@ -34,7 +34,7 @@ header nav#main-nav ul li {
   margin-left: 30px;
 }
 
-/* Hide button until min-width achieved, but still add style */
+/* Hide button until min-width achieved */
 header input {
   display: none;
   grid-column: 2;
@@ -84,10 +84,10 @@ p {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 10px;
-  /* https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
   grid-template-areas: "col-1 col-2 col-3 col-4 col-5 col-6 col-7 col-8 col-9 col-10 col-11 col-12";
 }
 
+/* Hide overflowing image part */
 #title-image {
   padding-top: 100px;
   width: 100%;

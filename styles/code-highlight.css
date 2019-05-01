@@ -48,6 +48,7 @@ code .code-header {
   border-top-left-radius: 20px;
 }
 
+/* Shrink the shadow and increase readability */
 @media (max-width: 750px) {
   code.code-block {
     font-size: 100%;
